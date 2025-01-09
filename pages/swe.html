@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering | Learn More</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+  <!-- header  -->
+  <div id="header"></div>
+  <!-- Link to external JavaScript file -->
+<script src="../scripts/utils.js" defer></script> 
+
+    <section id="swe-info">
+        <div class="container">
+            <h1>Software Engineering Career</h1>
+            <p>Software Engineering is one of the most dynamic fields, where you will be involved in developing and maintaining software systems. As a Software Engineer, you'll design, implement, test, and maintain software that meets the needs of users.</p>
+            <img src="../images/swe.jpg" alt="Software Engineering">
+            <h2>What Does a Software Engineer Do?</h2>
+            <p>Software engineers are responsible for building and maintaining software solutions, solving complex problems, and ensuring that the software performs efficiently. You'll work with various programming languages like Java, Python, and C++ to develop applications that are functional and user-friendly.</p>
+
+            <h2>Skills Required for Software Engineering</h2>
+            <ul>
+                <li>Proficiency in programming languages like Java, Python, or C++</li>
+                <li>Strong understanding of algorithms and data structures</li>
+                <li>Problem-solving and debugging skills</li>
+                <li>Experience with version control tools like Git</li>
+                <li>Familiarity with agile development methodologies</li>
+            </ul>
+
+            <h2>Why Choose Software Engineering?</h2>
+            <p>Software engineering offers a lucrative career path with opportunities in a variety of industries, from finance to healthcare. Software engineers have the chance to work on cutting-edge technologies and make a significant impact through the applications they build.</p>
+
+            <h2>How to Get Started</h2>
+            <p>To start a career in Software Engineering, you should pursue a degree in Computer Science or a related field. It's also helpful to gain experience through internships, build projects, and stay updated with the latest programming languages and software development trends.</p>
+
+            <!-- <a href="home.html#contact" class="cta-btn">Contact Us for More Info</a> -->
+            <a href="#" class="cta-btn" id="applyButton">Apply</a>
+
+            <!-- Modal Form -->
+<div id="applyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h3>Apply Now</h3>
+        <form id="applyForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="cv">Upload CV:</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="send-btn">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+            
+        </div>
+    </section>
+
+   <!-- Placeholder for the footer -->
+   <div id="footer"></div>
+   <!-- Link to external JavaScript file -->
+   <script src="../scripts/utils.js" defer></script> 
+
+   <script src="../scripts/apply.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staffing Website</title>
+    <link rel="stylesheet" href="../css/home.css">
+ 
+</head>
+<body>
+    <!-- header  -->
+    <div id="header"></div>
+        <!-- Link to external JavaScript file -->
+ <script src="../scripts/utils.js" defer></script> 
+    
+    <div class="carousel">
+        <div class="carousel-slide">
+            <div class="carousel-item" style="background-image: url('../images/talent.jpg');">
+                <div>
+                    <h2>Find Your Dream Job</h2>
+                    <p>Explore opportunities in tech, healthcare, and more.</p>
+                    <a href="#jobs">Explore Jobs</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('../images/skills.jpg');">
+                <div>
+                    <h2>Hire Top Talent</h2>
+                    <p>We connect you with the best professionals.</p>
+                    <a href="#services">Learn More</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('../images/place.jpg');">
+                <div>
+                    <h2>Grow Your Business</h2>
+                    <p>Staffing solutions tailored for success.</p>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="indicators">
+            <span class="indicator active" onclick="changeSlide(0)"></span>
+            <span class="indicator" onclick="changeSlide(1)"></span>
+            <span class="indicator" onclick="changeSlide(2)"></span>
+        </div>
+    </div>
+
+    <section id="services">
+        <h2>How Can We Help You?</h2>
+        <p>Leverage our talented technical expertise to accelerate your digital transformation and new technology initiatives.</p>
+        <div class="services">
+            <div class="service">
+                <img src="../images/recruitment.jpg" alt="recruit">
+                <h3>Recruitment</h3>
+                <p>Connecting top talent with leading companies.</p>
+            </div>
+            <div class="service">
+                <img src="../images/staffing.jpg" alt="staffing">
+                <h3>Staff Augmentation</h3>
+                <p>Flexible staffing solutions tailored to your needs.</p>
+            </div>
+            <div class="service">
+                <img src="../images/career.jpg" alt="career">
+                <h3>Career Coaching</h3>
+                <p>Guidance for achieving your career goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="career">
+        <h2>Take Your Career to the Next Level with us</h2>
+        <div class="career-options">
+            <table>
+                <tr>
+                    <td><div class="career-card"><img src="../images/swe.jpg" alt="swe"><p>Software Engineering</p><a href="swe.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/pm.jpg" alt="project mgmt"><p>Project Management</p><a href="career2.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/analysis.jpg" alt="data analysis"><p>Data Analysis</p><a href="career3.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/analysis.jpg" alt="iOS Development"><p>iOS Development</p><a href="career4.html">Learn More</a></div></td>
+                </tr>
+                <tr>
+                    <td><div class="career-card"><img src="../images/analysis.jpg" alt="data analysis"><p>DevOps</p><a href="career5.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/pm.jpg" alt="data analysis"><p>Test Automation</p><a href="career6.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/analysis.jpg" alt="data analysis"><p>Cloud Engineer</p><a href="career7.html">Learn More</a></div></td>
+                    <td><div class="career-card"><img src="../images/pm.jpg" alt="data analysis"><p>Salesforce</p><a href="career8.html">Learn More</a></div></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Connect With Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Placeholder for the footer -->
+    <div id="footer"></div>
+        <!-- Link to external JavaScript file -->
+        <script src="../scripts/utils.js" defer></script> 
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function changeSlide(index) {
+            document.querySelector('.carousel-slide').style.transform = `translateX(-${index * 100}%)`;
+            indicators[currentSlide].classList.remove('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+    </script>
+</body>
+</html>
