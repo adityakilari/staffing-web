@@ -1,13 +1,18 @@
 /* General Styles */
-body {
+html,body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+    height: 100%;
 }
 
+body {
+    flex: 1; /* Makes body take remaining space */
+}
 header {
-    background: #333;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -24,10 +29,22 @@ header nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
+    font-weight: bold;
 }
 
 header nav a:hover {
     text-decoration: underline;
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 5px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    margin-top: auto;
+    bottom: 0; 
+    left: 0; 
+    right: 0;
 }
 
 /* Carousel */
@@ -35,6 +52,7 @@ header nav a:hover {
     position: relative;
     overflow: hidden;
     height: 60vh;
+    background: linear-gradient(to bottom, #222, #444);
 }
 
 .carousel-slide {
@@ -59,23 +77,26 @@ header nav a:hover {
 .carousel-item h2 {
     font-size: 2.5em;
     margin: 0;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .carousel-item p {
     margin: 10px 0 20px;
     font-size: 1.2em;
+    text-shadow: 1px 1px 3px #000;
 }
 
 .carousel-item a {
     padding: 10px 20px;
-    background: #ff6f61;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .carousel-item a:hover {
-    background: #ff3b2f;
+    background: linear-gradient(to right, #e0564c, #f47d5c);
 }
 
 /* Indicators */
@@ -90,29 +111,37 @@ header nav a:hover {
 .indicator {
     width: 10px;
     height: 10px;
-    background: #fff;
+    background: #ddd;
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
 .indicator.active {
-    background: #ff6f61;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-color: #fff;
 }
 
 /* Services Section */
 #services {
     padding: 40px 20px;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
     text-align: center;
+    color: #333;
 }
 
 #services h2 {
     margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
 }
 
 #services p {
     margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
 }
 .services {
     display: flex;
@@ -130,10 +159,13 @@ header nav a:hover {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .service h3 {
-    margin: 10px 0;
+    margin: 15px 0;
+    color: #1e3c72;
+    font-size: 1.2em;
 }
 
 .service p {
@@ -194,6 +226,13 @@ header nav a:hover {
 /* Career Section Styling */
 #career {
     text-align: center;
+    background: linear-gradient(to bottom, #f7f8fa, #dde1e7);
+    color: #333;
+}
+#career h2 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
 }
 .career-options {
     margin: 0 auto;
@@ -204,10 +243,11 @@ header nav a:hover {
 /* Styling for each career card */
 .career-card {
     text-align: center;
-    background: #f4f4f4;
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .career-card img {
@@ -234,7 +274,9 @@ header nav a:hover {
 
 /* Hover effect for the link (button) */
 .career-card a:hover {
-    background: #555;
+    /* background: #555; */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Hover effect for the card */
@@ -273,7 +315,7 @@ td {
 /* Contact Section */
 #contact {
     padding: 40px 20px;
-    background: #333;
+    background: linear-gradient(to bottom, #2a5298, #1e3c72);
     color: #fff;
     text-align: center;
 }
@@ -302,22 +344,16 @@ td {
 }
 
 #contact button {
-    background: #ff6f61;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: #fff;
     cursor: pointer;
 }
 
 #contact button:hover {
-    background: #ff3b2f;
+    background: linear-gradient(to right, #e0564c, #f47d5c);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fff;
-}
+
 
 
 /* #swe-info {
@@ -380,56 +416,57 @@ footer {
 
 /* SWE Info Section */
 #swe-info {
-    text-align: center;
-}
-#swe-info {
     padding: 30px;
     text-align: left;
     max-width: 1000px;
     margin: 40px auto;
-    background: #f4f4f4;
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee); /* Matches #career section */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
 }
 
 #swe-info h1 {
-    font-size: 28px;
+    font-size: 1.8em; /* Matches previous headings */
     margin-bottom: 15px;
-    color: #333;
+    color: #555; /* Matches heading colors from #career */
+    text-align: center; /* Align for consistency */
 }
 
 #swe-info p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666; /* Matches text color */
+    margin-bottom: 20px;
 }
 
 #swe-info img {
     max-width: 50%;
     height: auto;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 20px auto;
+    display: block; /* Centers the image */
 }
 
 #swe-info h2 {
-    font-size: 20px;
+    font-size: 1.2em; /* Matches the subheading style */
     margin-top: 20px;
-    color: #444;
+    color: #555;
+    text-align: center; /* Align for consistency */
 }
 
 #swe-info ul {
     list-style: disc;
     padding-left: 20px;
-    font-size: 16px;
+    font-size: 1em;
+    color: #555; /* Matches text color */
 }
 
 #swe-info ul li {
     margin: 10px 0;
-    color: #555;
 }
 
 .cta-btn {
-    background: #007bff;
+    background: linear-gradient(to right, #007bff, #0056b3); /* Matches previous button gradient */
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
@@ -437,11 +474,65 @@ footer {
     border-radius: 5px;
     display: inline-block;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* Consistent hover effect */
+    text-align: center;
 }
 
 .cta-btn:hover {
-    background: #0056b3;
+    background: #0056b3; /* Darken on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Matches hover shadow */
+    transform: translateY(-3px);
+}
+
+/* PM Info Section */
+#pm-info {
+    padding: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee); /* Matches #career section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+}
+
+#pm-info h1 {
+    font-size: 1.8em; /* Matches previous headings */
+    margin-bottom: 15px;
+    color: #555; /* Matches heading colors from #career */
+    text-align: center; /* Align for consistency */
+}
+
+#pm-info p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666; /* Matches text color */
+    margin-bottom: 20px;
+}
+
+#pm-info img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto;
+    display: block; /* Centers the image */
+}
+
+#pm-info h2 {
+    font-size: 1.2em; /* Matches the subheading style */
+    margin-top: 20px;
+    color: #555;
+    text-align: center; /* Align for consistency */
+}
+
+#pm-info ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 1em;
+    color: #555; /* Matches text color */
+}
+
+#pm-info ul li {
+    margin: 10px 0;
 }
 
 /* Modal Form */
@@ -532,9 +623,6 @@ form {
         transform: translateY(0);
     }
 }
-
-
-
 
 /* Modal styles */
 .modal {
@@ -629,3 +717,49 @@ form {
         transform: translateY(0);
     }
 }
+
+/*developer info*/
+
+.table_developer {
+    width: 100%;
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee); /* Matches the background of #swe-info */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow consistency */
+    padding: 20px;
+}
+
+.table_developer th,
+.table_developer td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table_developer th {
+    background-color: #f2f2f2;
+}
+
+.table_developer img {
+    max-width: 40px;
+    height: auto;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.developer-info span {
+    text-align: center;
+    font-size: 15px;  /* Adjust text size if necessary */
+}
+#dev_title {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100px;            
+    text-align: center;      
+}
+
+#dev_title h2 {
+    margin: 0;                
+    font-size: 1.2em;           
+}
+
