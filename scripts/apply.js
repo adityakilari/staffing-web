@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('closeModal');
     const applyForm = document.getElementById('applyForm');
 
-    // Show the modal when "Apply" is clicked
-    applyButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        modal.style.display = 'block';
+    // Ensure modal is hidden on page load
+    modal.style.display = 'none';
 
-        // Clear form fields
-        applyForm.reset();
+    // Show modal when "Apply Now" is clicked
+    applyButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        modal.style.display = 'block';
     });
 
-    // Close the modal when "X" is clicked
+    // Close modal when "X" button is clicked
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
-    // Close the modal when clicking outside of it
+    // Close modal when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
