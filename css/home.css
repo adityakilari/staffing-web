@@ -1,22 +1,91 @@
-/* General Reset and Basic Styles */
-* {
+/* General Styles */
+html,body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: #f5f5f5;
-    background-color: #121212;
-    line-height: 1.6;
+header {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    height: 50px; 
+}
+
+/* header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+} */
+/* header .logo img {
+    height: 120px; 
+    width: auto;
+    display: flex;
+    max-width: 100%;
+} */
+
+.logo {
+    display: flex; /* Centering flex properties */
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
+    height: 50px; /* Set the container height */
+    padding-left: 10px;
+}
+
+/* Styling for the logo image */
+.logo img {
+    height: 60px; /* Control the logo height */
+    width: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure it doesn’t overflow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add hover effects */
+    display: flex;
+}
+
+/* Add hover effect to make it interactive */
+.logo img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    opacity: 0.9; /* Dim the brightness slightly */
+}
+
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    /* color: #feb47b; */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 5px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    margin-top: auto;
+    bottom: 0; 
+    left: 0; 
+    right: 0;
 }
 
 /* Carousel */
 .carousel {
     position: relative;
     overflow: hidden;
-    height: 85vh;
+    height: 60vh;
+    background: linear-gradient(to bottom, #222, #444);
 }
 
 .carousel-slide {
@@ -42,7 +111,6 @@ body {
     font-size: 2.5em;
     margin: 0;
     text-shadow: 2px 2px 5px #000;
-    color: #169ebe; /* Hulu Green */
 }
 
 .carousel-item p {
@@ -53,7 +121,7 @@ body {
 
 .carousel-item a {
     padding: 10px 20px;
-    background: linear-gradient(to right, #169ebe, #4daac0); /* Hulu Green gradient */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -61,7 +129,7 @@ body {
 }
 
 .carousel-item a:hover {
-    background: linear-gradient(to right, #169ebe, #4daac0); /* Darker shades for hover */
+    background: linear-gradient(to right, #e0564c, #f47d5c);
 }
 
 /* Indicators */
@@ -84,190 +152,68 @@ body {
 }
 
 .indicator.active {
-    background: linear-gradient(to right, #169ebe, #4daac0); /* Hulu Green gradient */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
     border-color: #fff;
 }
 
-
-/* Optional: Adjust styling for small screen sizes */
-@media (max-width: 768px) {
-    .carousel-item h2 {
-        font-size: 2rem;
-    }
-    .carousel-item p {
-        font-size: 1rem;
-    }
-}
-
-
 /* Services Section */
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 #services {
-    padding: 80px 20px; /* Adjusted padding for a spacious layout */
+    padding: 40px 20px;
+    /* background: #f4f4f4; */
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
     text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-    font-family: 'Poppins', sans-serif; /* Using a clean, modern font */
+    color: #333;
 }
 
 #services h2 {
-    font-size: 2.8rem; /* Increased size for better visibility */
     margin-bottom: 20px;
-    color: #169ebe; /* Highlighted color */
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.3;
+    font-size: 1.2em;
+    color: #555;
 }
 
 #services p {
-    font-size: 1rem; /* Slightly larger text for readability */
-    font-style: italic;
-    color: #ddd; /* Light text for description */
-    margin-bottom: 35px;
-    line-height: 1.7; /* Increased line height for better readability */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
 }
-
 .services {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px; /* Increased gap for better spacing */
-    align-items: flex-start; /* Align to the top */
-    text-align: left; /* Align text to the left within each section */
 }
 
 .service {
-    width: 30%; /* Equal width for each service */
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    font-family: 'Poppins', sans-serif; /* Consistent font across services */
+    max-width: 300px;
+    margin: 10px;
+    text-align: center;
 }
 
 .service img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistent image size */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-radius: 8px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.service img:hover {
-    transform: scale(1.05); /* Slight zoom effect on image hover */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .service h3 {
-    font-size: 1.2rem; /* Increased size for titles */
-    color: #f5f5f5;
-    margin-bottom: 15px;
-    font-weight: 600;
-    line-height: 1.3;
+    margin: 15px 0;
+    color: #1e3c72;
+    font-size: 1.2em;
 }
 
 .service p {
-    font-size: 0.6rem; /* Adjusted size for description */
-    font-style: italic;
-    color: #ccc;
-    line-height: 1.7; /* More readable line height */
-    margin-bottom: 10px;
-}
-
-.service a {
-    text-decoration: none;
-    color: #169ebe;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #169ebe;
-    border-radius: 5px;
-    display: inline-block;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.service a:hover {
-    color: white;
-    background-color: #169ebe;
-    border-color: #169ebe; /* Button hover effect */
-}
-
-#services a {
-    display: inline-block;
-    background-color: #169ebe; /* Primary color */
-    color: white; /* Text color for contrast */
-    padding: 10px 20px; /* Slightly larger padding for buttons */
-    font-size: 0.8rem; /* Slightly larger font size */
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-#services a:hover {
-    background-color: #0d7c99; /* Darker shade for hover effect */
-    color: #fff; /* Ensure text remains white */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    #services {
-        padding: 50px 15px; /* Slightly reduced padding for mobile */
-    }
-
-    .services {
-        flex-direction: column; /* Stack the services on smaller screens */
-        align-items: center;
-    }
-
-    .service {
-        width: 90%; /* Increased width for each service */
-        margin-bottom: 35px; /* Adjusted space between services */
-    }
-
-    .service img {
-        height: 160px; /* Slightly smaller images for mobile */
-    }
-
-    .service h3 {
-        font-size: 1.5rem; /* Larger text for better readability */
-        margin-bottom: 10px; /* Reduced margin for better spacing */
-    }
-
-    .service p {
-        font-size: 1rem; /* Slightly larger font for better readability */
-        line-height: 1.6; /* Increased line height for easier reading */
-    }
-
-    .service a {
-        padding: 12px 25px; /* Slightly larger padding for buttons on mobile */
-        font-size: 1rem; /* Improved font size for better readability */
-    }
-
-    #services a {
-        font-size: 1.2rem; /* Larger font size on mobile */
-        padding: 15px 30px; /* Adjust padding for mobile */
-        margin-top: 15px; /* Reduced space between sections */
-    }
+    color: #666;
 }
 
 /* Career Section */
+/*
 #career {
+    padding: 40px 20px;
     text-align: center;
-    padding: 60px 20px;
 }
+
 #career h2 {
-    font-size: 2rem; /* Increased size for better visibility */
     margin-bottom: 20px;
-    color: #169ebe; /* Highlighted color */
-    font-weight: 600;
-    letter-spacing: 2px;
-    line-height: 1.3;
 }
 
 .career-options {
@@ -277,163 +223,414 @@ body {
 }
 
 .career-card {
-    background-color: #1e1e1e;
-    width: 22%;
-    margin: 15px;
-    padding: 20px;
+    max-width: 275px;
+    margin: 10px;
     text-align: center;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.career-card:hover {
-    transform: scale(1.05);
-}
-
-/* Ensure all career card images have the same size */
 .career-card img {
-    width: 100%; /* Ensures the image takes up the full width of the card */
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Ensures images maintain aspect ratio without distortion */
-    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .career-card p {
     margin: 10px 0;
-    font-size: 1.1rem;
 }
 
 .career-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
     text-decoration: none;
-    color: #169ebe;
-    font-weight: bold;
+    border-radius: 5px;
 }
 
-.career a:hover {
-    color: #0d7c99; /* Darker shade for hover effect */
+.career-card a:hover {
+    background: #555;
+}
+*/
+
+/* Career Section Styling */
+#career {
+    text-align: center;
+    background: linear-gradient(to bottom, #f7f8fa, #dde1e7);
+    color: #333;
+}
+#career h2 {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+.career-options {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
 }
 
-/* Mobile Responsive */
+/* Styling for each career card */
+.career-card {
+    text-align: center;
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.career-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Card text styling */
+.career-card p {
+    margin: 10px 0;
+}
+
+/* Styling for the link (button) */
+.career-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover effect for the link (button) */
+.career-card a:hover {
+    /* background: #555; */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for the card */
+.career-card:hover {
+    transform: translateY(-10px); /* Lift the card when hovered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for emphasis */
+}
+
+/* Table Layout Styling */
+table {
+    width: 100%;
+    border-spacing: 20px; /* Space between cards */
+    margin: 0 auto;
+}
+
+td {
+    width: 24%; /* 4 cards per row */
+    padding: 10px;
+}
+
+@media (max-width: 1200px) {
+    td {
+        width: 48%; /* 2 cards per row on medium screens */
+    }
+}
+
 @media (max-width: 768px) {
-    #career {
-        padding: 40px 15px; /* Reduced padding for mobile */
-    }
-
-    #career h2 {
-        font-size: 1.8rem; /* Slightly smaller font size for mobile */
-    }
-
-    .career-options {
-        flex-direction: column; /* Stack career cards on smaller screens */
-        align-items: center; /* Center align the cards */
-    }
-
-    .career-card {
-        width: 80%; /* Increased width for each card */
-        margin: 15px 0; /* Adjusted margin for better spacing */
-        padding: 20px;
-    }
-
-    .career-card img {
-        height: 180px; /* Slightly smaller images for mobile */
-    }
-
-    .career-card p {
-        font-size: 1rem; /* Adjusted font size for readability */
-    }
-
-    .career-card a {
-        font-size: 1rem; /* Adjust font size for better visibility */
-        padding: 8px 18px; /* Adjusted padding for mobile */
+    td {
+        width: 100%; /* 1 card per row on small screens */
     }
 }
+
 
 
 
 /* Contact Section */
 #contact {
-    background-color: #222; /* Dark background to match the rest of the site */
-    color: #fff; /* White text color for contrast */
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #2a5298, #1e3c72);
+    color: #fff;
     text-align: center;
 }
 
 #contact h2 {
-    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #169ebe; /* Hulu Green */
-    font-weight: bold;
 }
 
 #contact form {
     max-width: 600px;
-    margin: 0 auto;
-    background-color: #333; /* Darker background for form */
+    margin: auto;
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#contact input, #contact textarea, #contact button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #fff;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background: linear-gradient(to right, #e0564c, #f47d5c);
+}
+
+.cta-btn {
+    background: linear-gradient(to right, #007bff, #0056b3); 
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease; 
+    text-align: center;
+}
+
+.cta-btn:hover {
+    background: #0056b3; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-3px);
+}
+
+
+/* Modal Form */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f44336;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.send-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close {
+    float: right;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff0000;
+}
+
+/* Form styles */
+form {
     display: flex;
     flex-direction: column;
 }
 
-#contact form label {
-    font-size: 1.1em;
-    margin: 10px 0 5px;
-    color: #ccc; /* Light gray label color */
-    text-align: left;
+.form-group {
+    margin-bottom: 15px;
 }
 
-#contact form input, #contact form textarea {
-    padding: 12px;
-    margin: 10px 0 20px;
-    border: 2px solid #444; /* Darker border color */
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #222; /* Match the background color */
-    color: #fff; /* White text in inputs */
-    transition: border-color 0.3s ease;
+.form-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
 }
 
-#contact form input:focus, #contact form textarea:focus {
-    border-color: #169ebe; /* Hulu Green on focus */
-    outline: none;
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-#contact form button {
-    padding: 12px 20px;
-    background-color: #169ebe; /* Hulu Green */
-    color: #fff;
-    font-size: 1.1em;
-    font-weight: bold;
+.form-actions {
+    text-align: center;
+}
+
+.send-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 10px;
 }
 
-#contact form button:hover {
-    background-color: #0482a0; /* Darker green on hover */
+.send-btn:hover {
+    background-color: #0056b3;
 }
 
-/* Media Query for Responsiveness */
-@media (max-width: 768px) {
-    #contact h2 {
-        font-size: 2em;
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-
-    #contact form {
-        width: 90%;
-    }
-
-    #contact form label, 
-    #contact form input, 
-    #contact form textarea, 
-    #contact form button {
-        font-size: 1em;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+/*developer info*/
 
+.table_developer {
+    width: 100%;
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee); /* Matches the background of #swe-info */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow consistency */
+    padding: 20px;
+}
+
+.table_developer th,
+.table_developer td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table_developer th {
+    background-color: #f2f2f2;
+}
+
+.table_developer img {
+    max-width: 40px;
+    height: auto;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.developer-info span {
+    text-align: center;
+    font-size: 15px;  /* Adjust text size if necessary */
+}
+#dev_title {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100px;            
+    text-align: center;      
+}
+
+#dev_title h2 {
+    margin: 0;                
+    font-size: 1.2em;           
+}
 
