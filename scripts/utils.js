@@ -1,31 +1,29 @@
-let currentIndex = 0;
-
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const indicators = document.querySelectorAll('.indicator');
+// Function to change slide
 function changeSlide(index) {
-    const slides = document.querySelectorAll('.carousel-item');
-    const indicators = document.querySelectorAll('.indicator');
-
     if (index < 0) {
-        currentIndex = slides.length - 1;
+        currentSlide = slides.length - 1;
     } else if (index >= slides.length) {
-        currentIndex = 0;
+        currentSlide = 0;
     } else {
-        currentIndex = index;
+        currentSlide = index;
     }
 
-    // Move to the selected slide
-    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+    document.querySelector('.carousel-slide').style.transform = `translateX(-${currentSlide * 100}%)`;
 
-    // Update active class on indicators
+    // Update indicator
     indicators.forEach(indicator => indicator.classList.remove('active'));
-    indicators[currentIndex].classList.add('active');
+    indicators[currentSlide].classList.add('active');
 }
 
-// Optional: Auto-slide every 5 seconds
+// Auto slide every 3 seconds
 setInterval(() => {
-    currentIndex = (currentIndex + 1) % 3; // assuming 3 slides
-    changeSlide(currentIndex);
-}, 5000);
+    changeSlide(currentSlide + 1);
+}, 3000);
 
+// Function to load HTML content dynamically (for header and footer)
 function loadHTML(elementId, filename) {
     fetch(filename)
         .then(response => response.text())
@@ -37,3 +35,4 @@ window.onload = function() {
     loadHTML('header', '../pages/header.html');
     loadHTML('footer', '../pages/footer.html');
 };
+
